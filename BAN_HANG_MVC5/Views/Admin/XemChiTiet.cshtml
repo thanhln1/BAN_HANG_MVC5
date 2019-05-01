@@ -1,0 +1,26 @@
+﻿@using BAN_HANG_MVC5.Models;
+@model IEnumerable<KhachHang>
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Layout/AdminQuanTri.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
+
+  }
+
+@*danh sách khách hàng*@
+
+@grid.GetHtml(
+            tableStyle: "table table-bordered table-condensed table-responsive",
+            headerStyle: "gridHead",
+            footerStyle: "gridHead",
+            rowStyle: "gridRow",
+            alternatingRowStyle: "gridAlter",
+            columns: grid.Columns(
+                        grid.Column("IdKH", "Mã Khách hàng"),
+                        grid.Column("TenKhachHang", "Tên khách hàng "),
+                         grid.Column("DiaChi", "Địa chỉ mail "),
+                        grid.Column("Email", "Tên khách hàng "),
+                         grid.Column("SoDienThoai", "Số điện thoại ")
+                        ))
+

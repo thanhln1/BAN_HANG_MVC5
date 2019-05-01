@@ -1,0 +1,23 @@
+﻿
+@using BAN_HANG_MVC5.Models;
+@model IEnumerable<SanPham>
+
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+@{ 
+    IEnumerable< SanPham > lstQAM = (IEnumerable<SanPham>)ViewBag.lstQAM;
+}
+
+<div>
+    <div class="container">
+        <h1 class="h1">ĐỒNG HỒ</h1>
+        <div class="">
+            <div>
+                @Html.Partial("~/Views/SanPham/SanPhamStyle1Partial.cshtml", lstQAM)
+            </div>
+        </div>
+    </div>
+</div>
